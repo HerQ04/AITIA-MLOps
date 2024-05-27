@@ -1,0 +1,12 @@
+names:
+- person
+nc: 1
+roboflow:
+  license: CC BY 4.0
+  project: person-so5ko
+  url: https://universe.roboflow.com/msc-onlab-1/person-so5ko/dataset/4
+  version: 4
+  workspace: msc-onlab-1
+test: person-4/test/images
+train: person-4/train/images
+val: person-4/valid/images
