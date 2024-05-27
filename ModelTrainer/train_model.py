@@ -31,6 +31,7 @@ def perform_training(opt):
         model.train(imgsz=opt.img, batch=opt.batch, epochs=opt.epochs, data=f"{dataset_location}/data.yaml", name=opt.name, patience=0)
     else:
         #Train model with YOLOv5
+        print(train)
         train.run(img=opt.img, batch=opt.batch, epochs=opt.epochs, data=f"{dataset_location}/data.yaml", cfg=f"{yolov5path}/models/{opt.model}.yaml", weights=f"{opt.model}.pt", name=opt.name)
 
 
@@ -47,7 +48,7 @@ if __name__ == '__main__':
     else:
         sys.path.append(yolov5path)
         try:
-            import train
+            from yolov5 import train
         except ModuleNotFoundError:
             raise ModuleNotFoundError("""Failed to import module 'train'. If your YOLOv5 is not located at 'C:\yolov5' maybe you forgot to set the YOLOV5_PATH system environment variable.""")
 
